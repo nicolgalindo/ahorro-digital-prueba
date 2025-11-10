@@ -8,9 +8,10 @@ const nextConfig: NextConfig = {
   // If you will publish under a repo path (https://<user>.github.io/<repo>),
   // set `basePath` and `assetPrefix` to `'/<repo>'` and `'/<repo>/'` respectively.
   output: 'export',
-  // Example (uncomment and replace with your repo name if needed):
-  // basePath: '/ahorro-digital-prueba',
-  // assetPrefix: '/ahorro-digital-prueba/',
+  // Configure basePath/assetPrefix since the site will be served from
+  // https://<user>.github.io/ahorro-digital-prueba
+  basePath: '/ahorro-digital-prueba',
+  assetPrefix: '/ahorro-digital-prueba/',
 };
 
 export default nextConfig;
