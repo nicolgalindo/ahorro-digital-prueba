@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nombre": "Clasica",
+    "tipo": "Tradicional",
+    "descripcion": "Tu cuenta de ahorros de siempre",
+    "tasa": "2.5% anual"
+  },
+  {
+    "id": 2,
+    "nombre": "Plus",
+    "tipo": "Digital",
+    "descripcion": "Mejoras en la rentabilidad",
+    "tasa": "3.0% anual"
+  },
+  {
+    "id": 3,
+    "nombre": "Premium",
+    "tipo": "Tradicional",
+    "descripcion": "Beneficios exclusivos y mayor rentabilidad.",
+    "tasa": "3.5% anual"
+  }
+]

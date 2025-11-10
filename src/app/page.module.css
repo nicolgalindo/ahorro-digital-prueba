@@ -1,11 +1,228 @@
+.simForm label {
+  color: #0a2a6c;
+  font-weight: 500;
+  font-size: 1.08rem;
+}
+.simInput {
+  color: #0a2a6c !important;
+  background: #fff;
+}
+.simForm label {
+  color: #0a2a6c;
+  font-weight: 500;
+  font-size: 1.08rem;
+}
+.simInput {
+  color: #0a2a6c;
+  background: #fff;
+}
+/* Estilos para el simulador */
+.simulatorMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 80vh;
+  background: var(--foreground);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(25, 118, 210, 0.08);
+  padding: 48px 32px;
+  gap: 32px;
+}
+
+.simForm {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 400px;
+  background: #e3f0ff;
+  padding: 32px 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+
+.simInput {
+  margin-top: 6px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--button-secondary-border);
+  font-size: 1.1rem;
+  width: 100%;
+  background: #fff;
+}
+
+.simError {
+  color: #d32f2f;
+  background: #fff3f3;
+  padding: 10px 18px;
+  border-radius: 8px;
+  margin-top: 18px;
+  font-weight: 600;
+}
+
+.simResult {
+  background: #1976d2;
+  color: #fff;
+  padding: 24px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.12);
+  margin-top: 24px;
+  text-align: center;
+}
+
+.simInfo {
+  margin-top: 32px;
+  background: #e3f0ff;
+  color: #1565c0;
+  padding: 18px 16px;
+  border-radius: 10px;
+  font-size: 0.98rem;
+  max-width: 420px;
+}
+.productCard {
+  background: #1976d2;
+  border-radius: 20px;
+  box-shadow: 0 6px 24px rgba(25, 118, 210, 0.18);
+  padding: 40px 32px;
+  min-width: 320px;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  color: #fff;
+  border: 2px solid #1565c0;
+}
+
+.productCard h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.productCard p {
+  font-size: 1.15rem;
+  margin: 0;
+  color: #fff;
+}
+
+.productCard b {
+  color: #e3f0ff;
+}
+/* Estilos para la página de productos */
+.productsMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 80vh;
+  background: var(--foreground);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(25, 118, 210, 0.08);
+  padding: 48px 32px;
+  gap: 32px;
+}
+
+.filterInput {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid var(--button-secondary-border);
+  font-size: 1rem;
+  margin-bottom: 24px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.productsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Estilos para la pantalla de Home */
+.homeMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  background: var(--foreground);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(25, 118, 210, 0.08);
+  padding: 48px 32px;
+  gap: 32px;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.homeBtn {
+  background: var(--button-primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+  transition: background 0.2s;
+}
+
+.homeBtn:hover {
+  background: var(--button-primary-hover);
+}
+
+.mainRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  gap: 40px;
+}
+
+.leftContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.rightContent {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeImg {
+  max-width: 550px;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(25, 118, 210, 0.12);
+}
 .page {
-  --background: #fafafa;
+  --background: #e3f0ff;
   --foreground: #fff;
 
-  --text-primary: #000;
-  --text-secondary: #666;
+  --text-primary: #0a2a6c;
+  --text-secondary: #3a6ea5;
 
-  --button-primary-hover: #383838;
+  --button-primary: #1976d2;
+  --button-primary-hover: #1565c0;
   --button-secondary-hover: #f2f2f2;
   --button-secondary-border: #ebebeb;
 
@@ -21,43 +238,60 @@
   display: flex;
   min-height: 100vh;
   width: 100%;
-  max-width: 800px;
+  max-width: 600px;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   background-color: var(--foreground);
-  padding: 120px 60px;
+  padding: 60px 30px;
 }
 
-.intro {
+
+.inicioCard {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  justify-content: center;
+  background: var(--foreground);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(25, 118, 210, 0.08);
+  padding: 48px 32px;
   gap: 24px;
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
   color: var(--text-primary);
+  margin-bottom: 12px;
+  text-align: center;
 }
 
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
+
+.subtitle {
+  font-size: 1.2rem;
   color: var(--text-secondary);
+  margin-bottom: 24px;
+  text-align: center;
 }
 
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
+
+.primary {
+  background: var(--button-primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+  transition: background 0.2s;
+}
+
+.primary:hover {
+  background: var(--button-primary-hover);
 }
 
 .ctas {
@@ -93,7 +327,6 @@ a.secondary {
   border-color: var(--button-secondary-border);
 }
 
-/* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
     background: var(--button-primary-hover);
