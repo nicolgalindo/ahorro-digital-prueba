@@ -1,8 +1,7 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches: [ main ]
+  workflow_dispatch: {}
 
 jobs:
   build-and-deploy:
@@ -21,6 +20,9 @@ jobs:
         run: npm ci
       - name: Build (static export)
         run: npm run build
+        env:
+          # set the base path so the exported site works under /ahorro-digital-prueba
+          NEXT_PUBLIC_BASE_PATH: '/ahorro-digital-prueba'
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
