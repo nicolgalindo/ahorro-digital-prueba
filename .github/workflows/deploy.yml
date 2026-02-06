@@ -27,6 +27,19 @@ jobs:
           if [ -d ./out ]; then
             touch ./out/.nojekyll
           fi
+      - name: Inspect exported files (debug)
+        if: ${{ always() }}
+        run: |
+          echo "--- head of out/index.html ---"
+          if [ -f ./out/index.html ]; then
+            head -n 80 ./out/index.html || true
+          else
+            echo "out/index.html not found"
+          fi
+          echo "--- grep for basePath occurrences ---"
+          grep -R "/ahorro-digital-prueba/img" ./out || true
+          echo "--- grep for absolute /img occurrences ---"
+          grep -R '"/img/' ./out || true
       - name: Upload artifact for GitHub Pages
         # use v2 to avoid dependency on deprecated upload-artifact v3
         uses: actions/upload-pages-artifact@v2
