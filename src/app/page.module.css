@@ -16,7 +16,7 @@
   color: #0a2a6c;
   background: #fff;
 }
-/* Estilos para el simulador */
+/* simulador */
 .simulatorMain {
   display: flex;
   flex-direction: column;
@@ -59,6 +59,16 @@
   border-radius: 8px;
   margin-top: 18px;
   font-weight: 600;
+}
+
+
+.recaptcha {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-top: 8px;
 }
 
 .simResult {
@@ -112,7 +122,7 @@
 .productCard b {
   color: #e3f0ff;
 }
-/* Estilos para la página de productos */
+/* productos */
 .productsMain {
   display: flex;
   flex-direction: column;
@@ -144,7 +154,7 @@
   width: 100%;
 }
 
-/* Estilos para la pantalla de Home */
+/*  Home */
 .homeMain {
   display: flex;
   flex-direction: column;
@@ -217,10 +227,8 @@
 .page {
   --background: #e3f0ff;
   --foreground: #fff;
-
   --text-primary: #0a2a6c;
   --text-secondary: #3a6ea5;
-
   --button-primary: #1976d2;
   --button-primary-hover: #1565c0;
   --button-secondary-hover: #f2f2f2;

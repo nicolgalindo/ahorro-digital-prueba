@@ -1,9 +1,9 @@
 
 'use client';
-import styles from "./page.module.css";
+import styles from "../page.module.css";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import productsData from "./products.json";
+import productsData from "../products.json";
 
 export default function Onboarding() {
   const router = useRouter();
@@ -31,12 +31,12 @@ export default function Onboarding() {
       setError("El correo es obligatorio y debe ser valido");
       return;
     }
-    if (recaptcha !== "OK") {
-      setError("Error de recaptcha. Por favor confirma que eres humano");
-      return;
-    }
     if (!cuenta) {
       setError("Debes seleccionar una cuenta de ahorro");
+      return;
+    }
+    if (recaptcha !== "OK") {
+      setError("Confirma que no eres un robot");
       return;
     }
     setSuccess(true);
@@ -44,8 +44,8 @@ export default function Onboarding() {
 
   return (
     <div className={styles.page}>
-      <main className={styles.simulatorMain}>
-          <button className={styles.primary} style={{marginBottom: 16}} onClick={() => router.push('/home')}>Atrás</button>
+    <main className={styles.simulatorMain}>
+  <button className={`${styles.primary} buttonBack`} onClick={() => router.push('/home')}>Atrás</button>
     
 
         <h1 className={styles.title}>Registrar  apertura cuenta de ahorro</h1>
@@ -94,22 +94,16 @@ export default function Onboarding() {
               placeholder="correo@ejemplo.com"
             />
           </label>
-       {/* campo OCULTO */}
-          <input
-            type="hidden" // Para hacerlo octurlo utilice  "hidden" por "text"
-            value={recaptcha}
-            onChange={e => setRecaptcha(e.target.value)}
-            className={styles.simInput}
-            name="recaptcha"
-            placeholder="recaptcha"
-          />
+          <label className={styles.recaptcha}>
+            <input
+              type="checkbox"
+              checked={recaptcha === "OK"}
+              onChange={e => setRecaptcha(e.target.checked ? "OK" : "")}
+            />
+            Confirmo que no soy un robot
+          </label>
           <button className={styles.primary} type="submit">Registrar</button>
         </form>
-        <div style={{marginTop: 24}}>
-          <label style={{color: '#1565c0', fontWeight: 500}}>
-            Simula el recaptcha: Escribe <b>OK</b> en el campo oculto (usa el inspector del navegador y luego en el HTML el value debe tener valor igual a OK)
-          </label>
-        </div>
         {error && <p className={styles.simError}>{error}</p>}
         {success && (
           <div className={styles.simResult}>
