@@ -27,6 +27,13 @@ jobs:
           if [ -d ./out ]; then
             touch ./out/.nojekyll
           fi
+      - name: Rewrite absolute asset paths to include basePath
+        run: |
+          echo "Rewriting /img and /_next paths to include /ahorro-digital-prueba"
+          if [ -d ./out ]; then
+            find ./out -type f -exec sed -i "s|/img/|/ahorro-digital-prueba/img/|g" {} + || true
+            find ./out -type f -exec sed -i "s|/_next/|/ahorro-digital-prueba/_next/|g" {} + || true
+          fi
       - name: Inspect exported files (debug)
         if: ${{ always() }}
         run: |
