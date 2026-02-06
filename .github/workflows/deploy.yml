@@ -1,10 +1,10 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages (official)
 
 on:
   workflow_dispatch: {}
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -21,11 +21,18 @@ jobs:
       - name: Build (static export)
         run: npm run build
         env:
-          # set the base path so the exported site works under /ahorro-digital-prueba
           NEXT_PUBLIC_BASE_PATH: '/ahorro-digital-prueba'
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
-          publish_branch: gh-pages
+          path: ./out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
