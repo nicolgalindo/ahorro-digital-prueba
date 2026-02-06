@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build (static export)
-        run: npm run build
+        run: npm run build && npm run export
         env:
           NEXT_PUBLIC_BASE_PATH: '/ahorro-digital-prueba'
       - name: Create .nojekyll to avoid Jekyll processing
