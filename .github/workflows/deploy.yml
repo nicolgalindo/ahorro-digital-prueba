@@ -23,7 +23,8 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: '/ahorro-digital-prueba'
       - name: Upload artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v1
+        # use v2 to avoid dependency on deprecated upload-artifact v3
+        uses: actions/upload-pages-artifact@v2
         with:
           path: ./out
 
