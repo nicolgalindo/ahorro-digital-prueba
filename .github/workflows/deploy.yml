@@ -22,6 +22,11 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: '/ahorro-digital-prueba'
+      - name: Create .nojekyll to avoid Jekyll processing
+        run: |
+          if [ -d ./out ]; then
+            touch ./out/.nojekyll
+          fi
       - name: Upload artifact for GitHub Pages
         # use v2 to avoid dependency on deprecated upload-artifact v3
         uses: actions/upload-pages-artifact@v2

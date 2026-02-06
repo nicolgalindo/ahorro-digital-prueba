@@ -3,6 +3,7 @@
 'use client';
 import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
+import { assetPath } from "../lib/assetPath";
 
 export default function Home() {
   const router = useRouter();
@@ -14,7 +15,7 @@ export default function Home() {
           <button className={styles.primary} onClick={() => router.push('/home')}>Entrar</button>
         </section>
         <section className={styles.rightContent}>
-          <img src="/img/home-img.jpeg" alt="Simulador del Ahorro Digital" className={styles.homeImg} />
+          <img src={assetPath('/img/home-img.jpeg')} alt="Simulador del Ahorro Digital" className={styles.homeImg} />
         </section>
       </main>
     </div>

@@ -4,6 +4,7 @@ import styles from "../page.module.css";
 
 import productsData from "../products.json";
 import { useRouter } from "next/navigation";
+import { assetPath } from "../../lib/assetPath";
 
 function debounce(fn: Function, delay: number) {
   let time: NodeJS.Timeout;
@@ -59,19 +60,19 @@ export default function ProductsPage() {
             {filtered.map((p: any) => (
               <div key={p.id} className={styles.productCard}>
                 <h2>
-                  <img src="/img/billetera-icon.png" alt="icon billetera" className="iconMedium" />
+                  <img src={assetPath('/img/billetera-icon.png')} alt="icon billetera" className="iconMedium" />
                   {p.nombre}
                 </h2>
                 <p>
-                  <img src="/img/tarjeta-icon.png" alt="icon tarjeta" className="iconSmall" />
+                  <img src={assetPath('/img/tarjeta-icon.png')} alt="icon tarjeta" className="iconSmall" />
                   <b>Tipo:</b> {p.tipo}
                 </p>
                 <p>
-                  <img src="/img/cash-icon.png" alt="icon cash" className="iconSmall" />
+                  <img src={assetPath('/img/cash-icon.png')} alt="icon cash" className="iconSmall" />
                   {p.descripcion}
                 </p>
                 <p>
-                  <img src="/img/tasa-icon.png" alt="icon tasa" className="iconSmall" />
+                  <img src={assetPath('/img/tasa-icon.png')} alt="icon tasa" className="iconSmall" />
                   <b>Tasa:</b> {p.tasa}
                 </p>
               </div>
